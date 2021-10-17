@@ -8,7 +8,7 @@ for i in range(1, n+1):
     while i > 0:
         temp = i % 10
         i //= 10
-        
+
         if temp == 0 or cur % temp != 0:
             is_good = False
             break
@@ -17,4 +17,3 @@ for i in range(1, n+1):
         count += 1
 
 print(count)
-
