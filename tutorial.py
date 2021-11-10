@@ -20,6 +20,18 @@ def sm(a, i, j):
 
     return a[i] + sm(a, i+1, j)
     
+# sm([1,2,3,4], 0, 4)
+# if --> False
+# return 1 + sm(a, 1, 4)
+# if --> False
+# return 2 + sm(a, 2, 4)
+# if --> False
+# return 3 + sm(a, 3, 4)
+# if --> False
+# return 4 + sm(a, 4, 4)
+# if --> True
+# return 0
+
 def recursive_max(a,i,j):
     if i == j - 1:
         return a[i]
