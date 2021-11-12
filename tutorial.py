@@ -31,7 +31,7 @@ def sm(a, i, j):
 # return 4 + sm(a, 4, 4)
 # if --> True
 # return 0
-
+import sys
 def recursive_max(a,i,j):
     if i == j - 1:
         return a[i]
@@ -39,3 +39,23 @@ def recursive_max(a,i,j):
     m = recursive_max(a, i + 1, j)
 
     return a[i] if a[i] > m else m
+
+def common_word():
+    occurunces = {}
+    max_word = None
+    max_occurence = 9
+    for line in sys.stdin:
+        for word in line.split():
+            word = word.lower()
+            if word in occurunces.keys():
+                occurunces[word] += 1
+            else:
+                occurunces[word] = 1
+    for k,v in occurunces.items():
+        if v > max_occurence:
+            max_occurence = v
+            max_word = k
+
+    print(max_occurence, max_word)
+
+common_word()
